@@ -40,6 +40,10 @@ const GoogleMap = React.lazy(() => import('./Demo/Maps/GoogleMap/index'));
 const OtherSamplePage = React.lazy(() => import('./Demo/Other/SamplePage'));
 const OtherDocs = React.lazy(() => import('./Demo/Other/Docs'));
 
+const Dataset = React.lazy(() => import('./Demo/Tables/DataSet'));
+
+const Data = React.lazy(() => import('./Demo/Tables/ReactTable'));
+
 const routes = [
   //   {
   //     path: '/dashboard/default',
@@ -96,10 +100,16 @@ const routes = [
     component: FormsElements,
   },
   {
-    path: '/tables/bootstrap',
+    path: '/app/dataset',
     exact: true,
-    name: 'Bootstrap Table',
-    component: BootstrapTable,
+    name: 'Dataset',
+    component: Dataset,
+  },
+  {
+    path: '/app/data/:id',
+    exact: true,
+    name: 'data',
+    component: Data,
   },
   {
     path: '/charts/nvd3',

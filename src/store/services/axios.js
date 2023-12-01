@@ -39,7 +39,7 @@ axiosInstance.interceptors.response.use(
       // apply refresh token logic here instead of redirecting to login
       localStorage.clear();
       sessionStorage.clear();
-      window.location.reload();
+      // window.location.reload();
     }
     if (!error.response) {
       console.error(error.message || 'Error in util/axios.js -2');
