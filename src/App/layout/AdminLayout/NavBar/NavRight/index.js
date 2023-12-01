@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Dropdown } from 'react-bootstrap';
+import { connect } from 'react-redux';
 
 import ChatList from './ChatList';
 import Aux from '../../../../../hoc/_Aux';
@@ -48,7 +49,7 @@ class NavRight extends Component {
                       />
                       <div className="media-body">
                         <p>
-                          <strong>John Doe</strong>
+                          <strong>{this.props.username}</strong>
                           <span className="n-time text-muted">
                             <i className="icon feather icon-clock m-r-10" />
                             30 min
@@ -129,7 +130,7 @@ class NavRight extends Component {
                     className="img-radius"
                     alt="User Profile"
                   />
-                  <span>John Doe</span>
+                  <span>{this.props.username}</span>
                   <a
                     href={DEMO.BLANK_LINK}
                     className="dud-logout"
@@ -182,4 +183,10 @@ class NavRight extends Component {
   }
 }
 
-export default NavRight;
+const mapStateToProps = (state) => {
+  return {
+    username: state.auth.authUser && state.auth.authUser.name,
+  };
+};
+
+export default connect(mapStateToProps)(NavRight);
