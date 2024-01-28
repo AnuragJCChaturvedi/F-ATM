@@ -15,7 +15,27 @@ import TLoader from '../Loader/TLoader';
 
 import './app.scss';
 
+import './index.css'
+
+import ATM from './atm'
+
+
 class AdminLayout extends Component {
+
+
+constructor(props) {
+  super(props);
+  this.state = {
+    screen: null
+  }
+  this.updateScreen = this.updateScreen.bind(this);
+
+}
+
+updateScreen(screen) {
+  this.setState({ screen });
+}
+
   fullScreenExitHandler = () => {
     if (
       !document.fullscreenElement &&
@@ -71,14 +91,14 @@ class AdminLayout extends Component {
     return (
       <Aux>
         <Fullscreen enabled={this.props.isFullScreen}>
-          {this.props.loader && <TLoader />}
+          {/* {this.props.loader && <TLoader />}
           <Navigation />
-          <NavBar />
+          <NavBar /> */}
           <div
             className="pcoded-main-container"
             onClick={() => this.mobileOutClickHandler}
           >
-            <div className="pcoded-wrapper">
+            {/* <div className="pcoded-wrapper">
               <div className="pcoded-content">
                 <div className="pcoded-inner-content">
                   <Breadcrumb />
@@ -95,7 +115,14 @@ class AdminLayout extends Component {
                   </div>
                 </div>
               </div>
-            </div>
+            </div> */}
+            {/* <div style={{margin: '0px 0px 0px 180px'}}> */}
+            <div className="pnc-container">
+           <ATM screen={this.state.screen} onUpdateScreen={this.updateScreen}/>
+           </div>
+           {/* </div> */}
+
+
           </div>
         </Fullscreen>
       </Aux>

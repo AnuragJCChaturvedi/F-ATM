@@ -13,9 +13,18 @@ const navLogo = (props) => {
     <Aux>
       <div className="navbar-brand header-logo">
         <a href={DEMO.BLANK_LINK} className="b-brand">
-          <div className="b-bg">
+          {/* <div className="b-bg">
             <i className="fa-solid fa-magnifying-glass" />
-          </div>
+          </div> */}
+         <div className="b-bg">
+  <img
+    src={require("./pnc.png")}
+    alt="magnifying glass"
+    style={{ maxWidth: "100%", maxHeight: "100%", width: "auto", height: "auto" }}
+  />
+</div>
+
+
           <div
             style={{
               display: 'block !important',
@@ -24,9 +33,10 @@ const navLogo = (props) => {
               paddingLeft: '10px',
             }}
           >
-            <div style={{ textTransform: 'uppercase' }}>Archaeology</div>
+            <div style={{ textTransform: 'uppercase' }}>PNC</div>
             <div style={{ textTransform: 'capitalize' }}>
-              {props.role || 'unknown'}
+              {/* {props.role || 'unknown'} */}
+              Pittsburgh
             </div>
           </div>
         </a>

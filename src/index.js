@@ -10,6 +10,8 @@ import * as serviceWorker from './serviceWorker';
 import combineReducers from './store/reducer/index';
 import config from './properties';
 
+import './aws.js';
+
 const store = createStore(
   combineReducers(),
   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()

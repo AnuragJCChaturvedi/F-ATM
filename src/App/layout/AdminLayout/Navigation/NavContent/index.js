@@ -98,7 +98,7 @@ class NavContent extends Component {
       );
     } else {
       mainContent = (
-        <div className="navbar-content datta-scroll">
+        <div className="navbar-content datta-scroll" style={{display: 'none'}}>
           <PerfectScrollbar>
             <ul className="nav pcoded-inner-navbar">{navItems}</ul>
           </PerfectScrollbar>
